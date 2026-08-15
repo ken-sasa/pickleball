@@ -1,99 +1,120 @@
-# ピックルボール スコアシート — 公開手順
+# Open Pickleball Research Commons
 
-このフォルダをそのまま Web に置けば、QRコードで配布できるデモ版になります。
-サーバー側の処理はなく、すべて静的ファイルです。
+**An open, cumulative, and reproducible infrastructure for the science of pickleball.**
 
-## 含まれるファイル
+Open Pickleball Research Commons (OPRC) is a research infrastructure project for building shared definitions, measurement protocols, evidence maps, datasets, benchmarks, and replication resources for pickleball research.
 
-| ファイル | 役割 |
-|---|---|
-| `index.html` | アプリ本体（これ1つで動作します） |
-| `manifest.webmanifest` | ホーム画面に追加したときの名前・アイコン設定 |
-| `sw.js` | オフライン用のキャッシュ（体育館で電波が弱くても起動します） |
-| `icon-192.png` / `icon-512.png` | ホーム画面アイコン |
-| `apple-touch-icon.png` | iPhone / iPad 用アイコン |
-| `favicon-32.png` | ブラウザのタブに出る小さいアイコン |
-| `.nojekyll` | GitHub Pages の余計な変換を止めるための空ファイル |
+The project is intentionally broader than a single laboratory, discipline, or paper. Its goal is to make pickleball research easier to compare, reproduce, extend, and reuse across countries and research domains.
 
----
+> **Status:** Founding draft, v0.1 (August 2026). Materials labeled `v0.x` are proposals for testing and community review, not established international standards.
 
-## GitHub Pages で公開する
+## Why this repository exists
 
-### 1. リポジトリを作る
+Pickleball research is expanding across sports science, public health, injury epidemiology, aging, psychology, social connection, biomechanics, computer vision, education, management, and community studies. These studies often use different variables, definitions, protocols, and data structures.
 
-1. GitHub にログインし、右上の「＋」→「New repository」。
-2. **Repository name** に例えば `pickleball-scoresheet` と入力。
-3. **Public** を選択（Private だと Pages が有料プラン限定になります）。
-4. 「Create repository」。
+OPRC addresses that fragmentation by developing a lightweight shared research layer:
 
-### 2. ファイルをアップロードする
+1. **Evidence** — What has already been studied?
+2. **Standards** — What minimum variables should be reported?
+3. **Protocols** — How can common constructs be measured reproducibly in ordinary courts and gyms?
+4. **Data** — How can results be represented in reusable formats?
+5. **Benchmarks** — How can analytic methods be compared on common tasks?
+6. **Replication** — How can studies be repeated across institutions and countries?
+7. **Observatory** — How is pickleball science itself changing over time?
 
-1. 作ったリポジトリの画面で「uploading an existing file」（または Add file → Upload files）。
-2. **このフォルダの中身**（`index.html` などのファイル）をドラッグ＆ドロップします。
-   フォルダごとではなく、**中のファイルを直接**入れてください。
-3. 下の「Commit changes」を押します。
+## Founding workstreams
 
-> `.nojekyll` は先頭がドットのため、環境によってはドラッグ＆ドロップで表示されないことがあります。
-> 見当たらない場合は「Add file → Create new file」でファイル名に `.nojekyll` と入力し、中身は空のまま Commit しても構いません。
+### 1. Pickleball Research Minimum Data Set (PR-MDS)
 
-### 3. Pages を有効にする
+`standards/PR-MDS-v0.1.md`
 
-1. リポジトリの **Settings** → 左メニューの **Pages**。
-2. **Source** で「Deploy from a branch」を選択。
-3. **Branch** を `main`、フォルダを `/ (root)` にして **Save**。
-4. 1〜2分待つと、同じ画面の上部に公開URLが表示されます。
+A proposed minimum reporting and data schema for pickleball studies. The first version covers participant characteristics, playing exposure, match/session context, performance, health/safety, social outcomes, and provenance.
 
-公開URLはこの形になります。
+The design principle is **minimum common core, extensible modules**. Researchers should not have to collect everything in the repository; they should be able to collect a small compatible core and add domain-specific modules.
 
+### 2. Pickleball Evidence Map
+
+`evidence/`
+
+A living, structured map of the peer-reviewed and scholarly pickleball literature. The map is designed around reusable coding fields rather than a static narrative review.
+
+### 3. Field Measurement Protocol
+
+`protocols/field-measurement-v0.1.md`
+
+A low-cost measurement framework intended for ordinary courts, gyms, universities, clubs, and community events. The emphasis is reproducibility and deployment, not dependence on laboratory-only equipment.
+
+### 4. Pickleball as Social Technology
+
+`social-technology/framework-v0.1.md`
+
+A research program asking:
+
+> **How can sport be designed as a social technology?**
+
+Pickleball is treated not only as physical activity or competition, but as a potentially measurable system for generating interaction, repeated contact, new ties, belonging, and intergenerational connection.
+
+### 5. Future workstreams
+
+Planned components include:
+
+- `benchmarks/` — common computer-vision and match-analysis tasks
+- `datasets/` — de-identified and openly reusable research data where ethically and legally possible
+- `observatory/` — longitudinal monitoring of pickleball science
+- `replications/` — multi-site and international replication packages
+- `papers/` — analysis plans, preprints, and reproducibility supplements
+
+## Repository structure
+
+```text
+.
+├── README.md
+├── ROADMAP.md
+├── CONTRIBUTING.md
+├── evidence/
+│   ├── CODEBOOK.md
+│   └── evidence-map-schema-v0.1.csv
+├── standards/
+│   ├── PR-MDS-v0.1.md
+│   └── pr-mds-v0.1.csv
+├── protocols/
+│   └── field-measurement-v0.1.md
+├── social-technology/
+│   └── framework-v0.1.md
+└── [existing score-sheet web app files]
 ```
-https://<GitHubのユーザー名>.github.io/<リポジトリ名>/
-```
 
-例：ユーザー名が `kento-sasano`、リポジトリ名が `pickleball-scoresheet` なら
-`https://kento-sasano.github.io/pickleball-scoresheet/`
+## Existing score-sheet prototype
 
-### 4. QRコードを作る
+This repository already contains a browser-based pickleball score sheet and offline-capable GitHub Pages prototype. It is being retained as an early field-tool component. In a future release it can be reorganized under a dedicated `tools/` area and aligned with PR-MDS-compatible exports.
 
-`QRコード生成.html` をブラウザで開き、上記のURLを貼り付けてください。
-PNG（印刷用）と SVG（拡大しても劣化しない形式）で保存できます。
+## Design principles
 
----
+OPRC follows six working principles:
 
-## 更新のしかた
+- **Open where possible** — methods, schemas, codebooks, and non-sensitive materials should be inspectable and reusable.
+- **Minimum before maximum** — prefer a small interoperable core to an exhaustive but unusable standard.
+- **Field deployable** — prioritize methods that can work outside elite laboratories.
+- **Versioned** — definitions and protocols change only through explicit versions.
+- **Reproducible** — distinguish raw observations, derived variables, and analytic decisions.
+- **Internationalizable** — avoid Japan- or US-specific assumptions in core schemas when possible.
 
-`index.html` を新しいものに差し替えて Commit すれば、そのまま反映されます。
-**ただし** `sw.js` がキャッシュを持っているため、既に開いたことのある端末では
-古い画面が出ることがあります。アプリを更新したときは `sw.js` の1行目付近にある
+## Versioning
 
-```js
-const CACHE = 'pb-scoresheet-v1';
-```
+- `v0.x` — experimental / candidate specification
+- `v1.x` — stable specification after validation and external review
+- major version changes — incompatible changes to required fields or construct definitions
 
-の `v1` を `v2`、`v3` … と変えてから Commit してください。次に開いたときに新しい版に入れ替わります。
+Archived versions should remain available for reproducibility.
 
----
+## How to contribute
 
-## 利用者への案内文（そのままコピーして使えます）
+See `CONTRIBUTING.md`. Contributions are welcome from sports scientists, clinicians, epidemiologists, social scientists, computer-vision researchers, coaches, analysts, clubs, and community organizations.
 
-> **ピックルボールのスコアシート（無料・登録不要）**
-> QRコードを読み取るとブラウザで開きます。アプリのインストールは不要です。
-> 記録はお使いの端末の中だけに保存され、外部には送信されません。
-> よく使う方は、ブラウザのメニューから「ホーム画面に追加」しておくと、
-> 電波の届かない体育館でもすぐ起動できます。
+## Citation
 
----
+Until a versioned release and archival DOI are issued, cite the repository URL together with the exact version or commit used. A formal `CITATION.cff` and DOI-backed release are planned before v1.0.
 
-## よくある質問
+## Founding objective
 
-**Q. データはどこに保存されますか？**
-利用者の端末のブラウザ内（localStorage）だけです。サーバーには何も送られません。
-端末を変えると記録は引き継がれないので、必要な場合はアプリ内のCSV出力を使ってください。
-
-**Q. プライベートブラウズだと記録が消えます**
-その場合はアプリが起動時に警告を表示します。CSV出力で保存してください。
-
-**Q. 独自ドメインを使いたい**
-Settings → Pages の「Custom domain」に設定できます。設定後はQRコードを作り直してください。
-
-**Q. iPhone でホーム画面に追加したい**
-Safari で開き、共有ボタン → 「ホーム画面に追加」。全画面表示で起動します。
+The near-term objective is not to declare a universal standard. It is to release a sufficiently clear and useful **candidate research infrastructure** that other investigators can test, criticize, replicate, and improve.
