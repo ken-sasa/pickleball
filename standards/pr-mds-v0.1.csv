@@ -1,0 +1,22 @@
+variable,level,requirement,type,allowed_values_or_format,definition,provenance_expected,notes
+record_id,record,REQUIRED,string,unique within dataset,Unique record identifier,ADMINISTRATIVE,Must not contain direct identifiers
+study_id,study,REQUIRED,string,stable project identifier,Identifier for study or protocol,ADMINISTRATIVE,
+protocol_version,study,REQUIRED,string,semantic or documented version,Version of collection protocol,ADMINISTRATIVE,
+site_id,site,RECOMMENDED,string,pseudonymous or public site identifier,Collection site identifier,ADMINISTRATIVE,Avoid precise location if disclosure risk is material
+collection_date,record,REQUIRED,date,YYYY-MM-DD,Date of observation or collection,ADMINISTRATIVE,May be generalized for public release with documentation
+country_iso3,site,REQUIRED,string,ISO 3166-1 alpha-3,Country of collection site,ADMINISTRATIVE,
+data_source_type,record,REQUIRED,categorical,participant_report|observer|device|video|administrative|derived|mixed,Primary source of the record,ADMINISTRATIVE,
+participant_id,participant,CONDITIONAL,string,pseudonymous stable identifier,Participant identifier,ADMINISTRATIVE,Required for participant-level linked data
+age_band,participant,RECOMMENDED,categorical,<18|18-24|25-34|35-44|45-54|55-64|65-74|75-84|85+|NR,Age band at collection,SELF_REPORTED,Exact age may be retained in controlled data
+ dominant_hand,participant,RECOMMENDED,categorical,right|left|ambidextrous|other|unknown,Playing hand dominance,SELF_REPORTED,
+pickleball_experience_months,participant,RECOMMENDED,integer,>=0,Months since regular pickleball participation began,SELF_REPORTED,Define regular participation in study protocol
+skill_rating_system,participant,CONDITIONAL,string,system name,Rating system associated with rating value,ADMINISTRATIVE,Required when skill_rating_value is present
+skill_rating_value,participant,CONDITIONAL,string,system-specific,Rating value under named system,ADMINISTRATIVE,Do not compare across systems without validated crosswalk
+prior_racket_paddle_sport,participant,RECOMMENDED,categorical,yes|no|unknown,Prior racket or paddle sport experience,SELF_REPORTED,
+session_id,session,CONDITIONAL,string,stable session identifier,Session identifier,ADMINISTRATIVE,Required for session-level linked data
+session_type,session,REQUIRED,categorical,practice|recreational_play|competition|measurement|lesson|other,Primary session purpose,OBSERVER,
+play_format,session,RECOMMENDED,categorical,singles|doubles|mixed|not_applicable,Primary play format,OBSERVER,Use mixed when multiple formats occur
+indoor_outdoor,session,RECOMMENDED,categorical,indoor|outdoor|mixed|unknown,Primary environmental setting,OBSERVER,
+session_duration_min,session,RECOMMENDED,number,>=0,Elapsed session duration in minutes,OBSERVED,State timing method if precision matters
+active_play_duration_min,session,OPTIONAL,number,>=0,Estimated or measured active play duration,OBSERVED,Document estimation or device method
+games_played,session,RECOMMENDED,integer,>=0,Number of completed games,OBSERVED,
