@@ -8,7 +8,7 @@ country_iso3,site,REQUIRED,string,ISO 3166-1 alpha-3,Country of collection site,
 data_source_type,record,REQUIRED,categorical,participant_report|observer|device|video|administrative|derived|mixed,Primary source of the record,ADMINISTRATIVE,
 participant_id,participant,CONDITIONAL,string,pseudonymous stable identifier,Participant identifier,ADMINISTRATIVE,Required for participant-level linked data
 age_band,participant,RECOMMENDED,categorical,<18|18-24|25-34|35-44|45-54|55-64|65-74|75-84|85+|NR,Age band at collection,SELF_REPORTED,Exact age may be retained in controlled data
- dominant_hand,participant,RECOMMENDED,categorical,right|left|ambidextrous|other|unknown,Playing hand dominance,SELF_REPORTED,
+dominant_hand,participant,RECOMMENDED,categorical,right|left|ambidextrous|other|unknown,Playing hand dominance,SELF_REPORTED,
 pickleball_experience_months,participant,RECOMMENDED,integer,>=0,Months since regular pickleball participation began,SELF_REPORTED,Define regular participation in study protocol
 skill_rating_system,participant,CONDITIONAL,string,system name,Rating system associated with rating value,ADMINISTRATIVE,Required when skill_rating_value is present
 skill_rating_value,participant,CONDITIONAL,string,system-specific,Rating value under named system,ADMINISTRATIVE,Do not compare across systems without validated crosswalk
