@@ -127,7 +127,7 @@ Do not collapse accuracy into a single score until the scoring rule has been tes
 
 ### Construct
 
-Ability to sustainain controlled low-velocity exchanges in the non-volley-zone context.
+Ability to sustain controlled low-velocity exchanges in the non-volley-zone context.
 
 ### Candidate procedure
 
@@ -152,7 +152,7 @@ Because partner behavior can materially affect the score, v0.1 treats this task 
 
 ### Construct
 
-Ability to sustainain a standardized cooperative exchange.
+Ability to sustain a standardized cooperative exchange.
 
 ### Candidate procedure
 
