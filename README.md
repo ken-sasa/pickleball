@@ -2,78 +2,70 @@
 
 **An open, cumulative, and reproducible infrastructure for the science of pickleball.**
 
-Open Pickleball Research Commons (OPRC) is a research infrastructure project for building shared definitions, measurement protocols, evidence maps, datasets, benchmarks, and replication resources for pickleball research.
+This repository develops shared research infrastructure for pickleball science: evidence mapping, minimum data standards, field measurement protocols, open datasets, analytics benchmarks, replication resources, and the study of **Pickleball as Social Technology**.
 
-The project is intentionally broader than a single laboratory, discipline, or paper. Its goal is to make pickleball research easier to compare, reproduce, extend, and reuse across countries and research domains.
+The goal is not to claim a standard before one exists. Materials under `v0.x` are candidate specifications intended for pilot use, criticism, validation, and revision.
 
-> **Status:** Founding draft, v0.1 (August 2026). Materials labeled `v0.x` are proposals for testing and community review, not established international standards.
+## What is here
 
-## Why this repository exists
+- `evidence/` — living evidence map, coding manual, and seed scholarly corpus
+- `standards/` — PR-MDS candidate minimum data specification
+- `protocols/` — low-cost field measurement protocols
+- `social-technology/` — theory and study designs for pickleball as a social technology
+- existing root web-app files — the original static pickleball score-sheet prototype, retained for continuity
 
-Pickleball research is expanding across sports science, public health, injury epidemiology, aging, psychology, social connection, biomechanics, computer vision, education, management, and community studies. These studies often use different variables, definitions, protocols, and data structures.
+## Current research assets
 
-OPRC addresses that fragmentation by developing a lightweight shared research layer:
+### Global Pickleball Research Evidence Map v0.1
 
-1. **Evidence** — What has already been studied?
-2. **Standards** — What minimum variables should be reported?
-3. **Protocols** — How can common constructs be measured reproducibly in ordinary courts and gyms?
-4. **Data** — How can results be represented in reusable formats?
-5. **Benchmarks** — How can analytic methods be compared on common tasks?
-6. **Replication** — How can studies be repeated across institutions and countries?
-7. **Observatory** — How is pickleball science itself changing over time?
+The repository now includes a **28-record scholarly seed corpus** coded at study level. It spans injury/safety, physical health and fitness, social connection, psychology/well-being, participation behavior, aging/physical function, and technology/AI.
 
-## Founding workstreams
+This is explicitly a discovery seed, **not an exhaustive systematic review**. Records are marked `AI_ASSISTED_SEED` and `single_coded` until human/full-text verification and double coding are completed.
 
-### 1. Pickleball Research Minimum Data Set (PR-MDS)
+See:
 
-`standards/PR-MDS-v0.1.md`
+- `evidence/evidence-map-v0.1.csv`
+- `evidence/SEED_CORPUS_NOTES.md`
+- `evidence/CODEBOOK.md`
 
-A proposed minimum reporting and data schema for pickleball studies. The first version covers participant characteristics, playing exposure, match/session context, performance, health/safety, social outcomes, and provenance.
+### PR-MDS v0.1
 
-The design principle is **minimum common core, extensible modules**. Researchers should not have to collect everything in the repository; they should be able to collect a small compatible core and add domain-specific modules.
+The **Pickleball Research Minimum Data Set (PR-MDS)** is a candidate core specification for making datasets easier to compare and combine across studies.
 
-### 2. Pickleball Evidence Map
+The design principle is a small reusable core with extensible modules rather than a compulsory giant questionnaire.
 
-`evidence/`
+See:
 
-A living, structured map of the peer-reviewed and scholarly pickleball literature. The map is designed around reusable coding fields rather than a static narrative review.
+- `standards/PR-MDS-v0.1.md`
+- `standards/pr-mds-v0.1.csv`
 
-### 3. Field Measurement Protocol
+### Pickleball Field Measurement Protocol v0.1
 
-`protocols/field-measurement-v0.1.md`
+A candidate 15–20 minute field battery prioritizing equipment that ordinary courts, gyms, clubs, universities, and community events can realistically use.
 
-A low-cost measurement framework intended for ordinary courts, gyms, universities, clubs, and community events. The emphasis is reproducibility and deployment, not dependence on laboratory-only equipment.
+The v0.1 protocol deliberately preserves attempt-level raw observations and treats reliability and validity as empirical questions rather than assumptions.
 
-### 4. Pickleball as Social Technology
+See `protocols/field-measurement-v0.1.md`.
 
-`social-technology/framework-v0.1.md`
+### Pickleball as Social Technology
 
-A research program asking:
+This program asks a broader question:
 
 > **How can sport be designed as a social technology?**
 
-Pickleball is treated not only as physical activity or competition, but as a potentially measurable system for generating interaction, repeated contact, new ties, belonging, and intergenerational connection.
+Pickleball is treated as a testbed for studying how rules, partner rotation, court structure, skill matching, repeated encounters, and participation design may influence the formation and persistence of social ties.
 
-### 5. Future workstreams
+See `social-technology/framework-v0.1.md`.
 
-Planned components include:
-
-- `benchmarks/` — common computer-vision and match-analysis tasks
-- `datasets/` — de-identified and openly reusable research data where ethically and legally possible
-- `observatory/` — longitudinal monitoring of pickleball science
-- `replications/` — multi-site and international replication packages
-- `papers/` — analysis plans, preprints, and reproducibility supplements
-
-## Repository structure
+## Research architecture
 
 ```text
-.
-├── README.md
-├── ROADMAP.md
-├── CONTRIBUTING.md
+open-pickleball-research/
 ├── evidence/
 │   ├── CODEBOOK.md
-│   └── evidence-map-schema-v0.1.csv
+│   ├── evidence-map-schema-v0.1.csv
+│   ├── evidence-map-v0.1.csv
+│   └── SEED_CORPUS_NOTES.md
 ├── standards/
 │   ├── PR-MDS-v0.1.md
 │   └── pr-mds-v0.1.csv
@@ -81,40 +73,45 @@ Planned components include:
 │   └── field-measurement-v0.1.md
 ├── social-technology/
 │   └── framework-v0.1.md
-└── [existing score-sheet web app files]
+├── ROADMAP.md
+├── CONTRIBUTING.md
+└── [original score-sheet web app files]
 ```
 
-## Existing score-sheet prototype
+## Scientific posture
 
-This repository already contains a browser-based pickleball score sheet and offline-capable GitHub Pages prototype. It is being retained as an early field-tool component. In a future release it can be reorganized under a dedicated `tools/` area and aligned with PR-MDS-compatible exports.
+The repository follows five principles:
 
-## Design principles
+1. **Open before ornate** — publish inspectable definitions, schemas, and protocols early.
+2. **Candidate before standard** — a document does not become a standard because its authors call it one.
+3. **Raw before composite** — retain attempt-level observations when feasible and derive scores transparently.
+4. **Field-deployable when possible** — prioritize methods that can be replicated outside elite laboratories while documenting optional high-resolution layers.
+5. **Validation before authority** — reliability, validity, inter-rater agreement, cross-site robustness, and external review are required before stable claims.
 
-OPRC follows six working principles:
+## Near-term roadmap
 
-- **Open where possible** — methods, schemas, codebooks, and non-sensitive materials should be inspectable and reusable.
-- **Minimum before maximum** — prefer a small interoperable core to an exhaustive but unusable standard.
-- **Field deployable** — prioritize methods that can work outside elite laboratories.
-- **Versioned** — definitions and protocols change only through explicit versions.
-- **Reproducible** — distinguish raw observations, derived variables, and analytic decisions.
-- **Internationalizable** — avoid Japan- or US-specific assumptions in core schemas when possible.
+The next validation sequence is:
 
-## Versioning
+1. bibliographically verify the 28-record seed corpus and resolve every DOI;
+2. run a reproducible multi-database systematic search;
+3. double-code a non-trivial Evidence Map subset and quantify agreement;
+4. pilot PR-MDS on a real field dataset;
+5. test the field battery for feasibility and reliability;
+6. pilot a Social Technology study, ideally manipulating a simple feature such as partner-rotation structure;
+7. obtain external methodological review before any `v1.0` stable release.
 
-- `v0.x` — experimental / candidate specification
-- `v1.x` — stable specification after validation and external review
-- major version changes — incompatible changes to required fields or construct definitions
+See `ROADMAP.md` for release gates.
 
-Archived versions should remain available for reproducibility.
+## Citation and contribution
 
-## How to contribute
+Until the first archived release is created, cite the repository and the exact commit or version used. Contributions that improve definitions, identify missing studies, reproduce measurements, add validated translations, or contribute replication data are especially welcome.
 
-See `CONTRIBUTING.md`. Contributions are welcome from sports scientists, clinicians, epidemiologists, social scientists, computer-vision researchers, coaches, analysts, clubs, and community organizations.
+See `CONTRIBUTING.md` for integrity and contribution rules.
 
-## Citation
+## Existing score-sheet application
 
-Until a versioned release and archival DOI are issued, cite the repository URL together with the exact version or commit used. A formal `CITATION.cff` and DOI-backed release are planned before v1.0.
+This repository originally hosted a static score-sheet web application. Those files are intentionally retained at the repository root during the founding transition. A later compatibility-preserving change can move the application under `tools/` and align its export schema with PR-MDS.
 
-## Founding objective
+---
 
-The near-term objective is not to declare a universal standard. It is to release a sufficiently clear and useful **candidate research infrastructure** that other investigators can test, criticize, replicate, and improve.
+**Open Pickleball Research Commons** aims to make pickleball research cumulative: shared evidence, shared definitions, shared measurements, and studies that can be reproduced rather than rediscovered from scratch.
