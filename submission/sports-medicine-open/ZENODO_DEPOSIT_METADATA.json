@@ -1,0 +1,32 @@
+{
+  "title": "Open Pickleball Research Commons v0.1: Supplementary Research Infrastructure",
+  "creators": [
+    {
+      "name": "Sasano, Kento",
+      "affiliation": "Okayama University"
+    }
+  ],
+  "publication_date": "2026-08-30",
+  "resource_type": "other",
+  "version": "0.1.0",
+  "description": "Frozen supplementary research infrastructure supporting the Current Opinion 'Building Cumulative Science in an Emerging Sport: The Open Pickleball Research Commons'. Includes the proof-of-concept Evidence Map, coding manual, PR-MDS specification and variable dictionary, field measurement protocol, and related reproducibility metadata. The 28-record Evidence Map is an AI-assisted, abstract-level, single-coded discovery seed and is not an exhaustive systematic review.",
+  "keywords": [
+    "pickleball",
+    "sports science",
+    "open science",
+    "research infrastructure",
+    "minimum data set",
+    "evidence map",
+    "reproducibility",
+    "sports analytics"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ken-sasa/pickleball",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "recommended_license": "CC-BY-4.0",
+  "notes": "Reserve the DOI in the Zenodo draft before finalizing the journal manuscript, then insert the reserved DOI into the Availability of data and materials statement and the data citation reference."
+}
