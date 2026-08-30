@@ -1,0 +1,30 @@
+30 August 2026
+
+Editor
+Sports Medicine - Open
+
+Re: Current Opinion submission, "Standardize Provenance Before Outcomes: A Research Commons for Cumulative Pickleball Science"
+
+Dear Editor,
+
+I am pleased to submit the Current Opinion, "Standardize Provenance Before Outcomes: A Research Commons for Cumulative Pickleball Science," for consideration in Sports Medicine - Open.
+
+The article addresses a contemporary methodological problem in sport science: how a rapidly emerging sport can establish interoperable research infrastructure before incompatible conventions become entrenched. Its central argument is deliberately narrow. Before attempting field-wide harmonization of outcomes, pickleball research should standardize the minimum context needed to interpret studies together - identifiers, provenance, exposure, derivation rules, and version history.
+
+The manuscript proposes the Open Pickleball Research Commons (OPRC), linking a Living Evidence Map, the candidate Pickleball Research Minimum Data Set (PR-MDS), field protocols, and domain benchmarks. It also defines clear boundaries: PR-MDS is not a core outcome set, reporting guideline, certification scheme, or universal protocol. A frozen 28-record map is included only as an AI-assisted, single-coded engineering proof of concept; it is not presented as a systematic review or estimate of the literature's true composition.
+
+This framing matches the editorial form of Current Opinion described by the journal because it evaluates how research processes and open, versioned infrastructure could affect sport-science practice. The manuscript is also falsifiable: components should advance only through independent reuse, low burden, reliable interpretation, multi-site validation, and public change control, and should be revised or retired when those tests fail.
+
+This is a single-author manuscript. I approve the submitted version and accept full responsibility for its content. It has not been published and is not under consideration elsewhere. No specific funding was received, and I declare no competing interests. The article used no human participants or identifiable participant data.
+
+OpenAI ChatGPT assisted with literature organization, schema-constrained seed coding, manuscript structuring, and language revision. This use is disclosed in the manuscript. I reviewed the cited sources, argument, extracted fields, references, and final text. Figure 1 was generated deterministically from author-reviewed vector-diagram code rather than by generative image synthesis.
+
+Five additional files provide the proof-of-concept Evidence Map, coding manual, PR-MDS specification and dictionary, and field measurement protocol.
+
+Thank you for considering the manuscript.
+
+Sincerely,
+
+Kento Sasano
+Okayama University
+office@sasano.org
