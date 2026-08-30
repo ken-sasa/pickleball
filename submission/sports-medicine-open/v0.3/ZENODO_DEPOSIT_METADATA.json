@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "Open Pickleball Research Commons v0.3: Context-and-Provenance Candidate Supporting Materials",
+    "upload_type": "dataset",
+    "description": "Versioned supporting package for the Current Opinion 'Outcome Harmonization Needs Context and Provenance: A Research Commons for Cumulative Pickleball Science'. Includes a 28-record AI-assisted demonstration corpus, its codebook, the pre-consensus PR-MDS v0.3 specification and dictionary, and a JSON validation schema with four-publication stress-test examples. The corpus is non-systematic and single-coded; PR-MDS is not an established standard, reporting guideline, core outcome set, certification scheme, or consensus product.",
+    "creators": [
+      {
+        "name": "Sasano, Kento",
+        "affiliation": "Okayama University"
+      }
+    ],
+    "publication_date": "2026-08-30",
+    "version": "0.3.0",
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "pickleball",
+      "sports medicine",
+      "research infrastructure",
+      "context",
+      "provenance",
+      "minimum data set",
+      "common data elements",
+      "open science",
+      "interoperability"
+    ],
+    "notes": "Reserve the DOI before publication and insert it into the manuscript's Availability of Data and Materials section and dataset citation. Human external review completed at this package version: 0. Independent prospective pilot sites completed: 0."
+  }
+}

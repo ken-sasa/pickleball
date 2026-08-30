@@ -1,0 +1,31 @@
+30 August 2026
+
+Editor
+Sports Medicine - Open
+
+Re: Current Opinion submission, "Outcome Harmonization Needs Context and Provenance: A Research Commons for Cumulative Pickleball Science"
+
+Dear Editor,
+
+I am pleased to submit the Current Opinion, "Outcome Harmonization Needs Context and Provenance: A Research Commons for Cumulative Pickleball Science," for consideration in Sports Medicine - Open.
+
+The article addresses a methodological problem in a rapidly emerging sport: outcome definitions and measures can become difficult to compare when the surrounding context of an observation—exposure, data source, units, derivation, protocol version, and identifiers—is not preserved consistently. The paper therefore proposes a narrow principle: outcome harmonization is more interpretable when it is supported by a lightweight context-and-provenance layer.
+
+The manuscript introduces the Open Pickleball Research Commons (OPRC) and the pre-consensus Pickleball Research Minimum Data Set (PR-MDS) v0.3 as a testable implementation. Importantly, the revision now positions OPRC explicitly alongside rather than instead of W3C PROV, FAIR, Common Data Elements, IOC/STROBE-SIIS, and core outcome-set methodology. PR-MDS is not presented as a reporting guideline, core outcome set, certification scheme, or established standard.
+
+A 28-record demonstration corpus and four-publication stress test are included only to test schema behavior and identify ambiguity. The corpus remains AI-assisted, abstract-level, single-coded, and non-systematic. It is not used to estimate the prevalence of research topics or to support treatment-effect claims.
+
+Following methodological stress testing of an earlier draft, v0.3 also adds a unified provenance classification, exposure-measurement metadata, machine validation through JSON Schema, a structured external-review protocol, and a governance draft designed to reduce founder dependence. The manuscript is deliberately falsifiable: fields may be retained, revised, moved to modules, replaced by mature external standards, or retired if independent review and pilot use do not support them.
+
+This is a single-author manuscript. I approve the submitted version and accept full responsibility for its content. No specific funding was received. I am the founder and current maintainer of OPRC and disclose that non-financial relationship; I have no financial competing interests related to this work. The article used no human participants or identifiable participant data.
+
+OpenAI ChatGPT assisted with literature organization, schema-constrained demonstration-corpus coding, manuscript structuring, language revision, and consistency checks. This use is disclosed in the manuscript. I reviewed the cited claims and bibliographic records; the demonstration corpus itself remains explicitly non-systematic and not comprehensively full-text verified.
+
+Thank you for considering the manuscript.
+
+Sincerely,
+
+Kento Sasano
+Faculty of Environmental, Life, Natural Science and Technology
+Okayama University
+office@sasano.org

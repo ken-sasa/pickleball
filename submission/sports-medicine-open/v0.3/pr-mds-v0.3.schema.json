@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ken-sasa/pickleball/submission/sports-medicine-open/v0.3/pr-mds-v0.3.schema.json",
+  "title": "PR-MDS v0.3 Candidate Context-and-Provenance Record",
+  "description": "Pre-consensus validation schema. Machine validity does not imply scientific validity or standard status.",
+  "type": "object",
+  "required": ["record_id", "study_id", "protocol_version"],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "study_id": {"type": "string", "minLength": 1},
+    "protocol_version": {"type": "string", "minLength": 1},
+    "site_id": {"type": ["string", "null"]},
+    "collection_date": {"type": ["string", "null"], "format": "date"},
+    "country_iso3": {"type": ["string", "null"], "pattern": "^[A-Z]{3}$"},
+    "participant_id": {"type": ["string", "null"]},
+    "age_value": {"type": ["number", "null"], "minimum": 0},
+    "age_band": {
+      "type": ["string", "null"],
+      "enum": ["<18", "18-24", "25-34", "35-44", "45-54", "55-64", "65-74", "75-84", "85+", "NR", null]
+    },
+    "pickleball_experience_months": {"type": ["integer", "null"], "minimum": 0},
+    "skill_rating_system": {"type": ["string", "null"]},
+    "skill_rating_value": {"type": ["string", "number", "null"]},
+    "session_id": {"type": ["string", "null"]},
+    "session_type": {
+      "type": ["string", "null"],
+      "enum": ["practice", "recreational_play", "competition", "measurement", "lesson", "other", null]
+    },
+    "play_format": {
+      "type": ["string", "null"],
+      "enum": ["singles", "doubles", "mixed", "not_applicable", "unknown", null]
+    },
+    "indoor_outdoor": {
+      "type": ["string", "null"],
+      "enum": ["indoor", "outdoor", "mixed", "unknown", null]
+    },
+    "session_duration_min": {"type": ["number", "null"], "minimum": 0},
+    "active_play_duration_min": {"type": ["number", "null"], "minimum": 0},
+    "games_played": {"type": ["integer", "null"], "minimum": 0},
+    "exposure_measurement_method": {
+      "type": ["string", "null"],
+      "enum": ["direct_timing", "device_derived", "administrative_record", "self_report", "scheduled_duration", "estimated", "mixed", "unknown", null]
+    },
+    "provenance_class": {
+      "type": ["string", "null"],
+      "enum": ["DIRECT_OBSERVATION", "SELF_REPORT", "DEVICE_MEASURED", "VIDEO_CODED", "ADMINISTRATIVE_RECORD", "ALGORITHM_DERIVED", "ANALYTIC_DERIVED", "MIXED", null]
+    },
+    "unit": {"type": ["string", "null"]},
+    "source_record_ids": {
+      "type": ["array", "null"],
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "derivation_method": {"type": ["string", "null"]},
+    "software_or_model": {"type": ["string", "null"]},
+    "software_or_model_version": {"type": ["string", "null"]},
+    "pipeline_version": {"type": ["string", "null"]}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"skill_rating_value": {"not": {"type": "null"}}},
+        "required": ["skill_rating_value"]
+      },
+      "then": {"required": ["skill_rating_system"]}
+    },
+    {
+      "if": {
+        "properties": {"provenance_class": {"enum": ["ALGORITHM_DERIVED", "ANALYTIC_DERIVED"]}},
+        "required": ["provenance_class"]
+      },
+      "then": {"required": ["source_record_ids", "derivation_method"]}
+    }
+  ],
+  "additionalProperties": true,
+  "examples": [
+    {
+      "record_id": "STRESS-INJURY-01",
+      "study_id": "Owoeye2025",
+      "protocol_version": "publication-reconstruction-v0.3",
+      "participant_id": "PSEUDO-001",
+      "age_band": "55-64",
+      "session_type": "recreational_play",
+      "exposure_measurement_method": "self_report",
+      "provenance_class": "SELF_REPORT"
+    },
+    {
+      "record_id": "STRESS-ACTIVITY-01",
+      "study_id": "Webber2023",
+      "protocol_version": "publication-reconstruction-v0.3",
+      "session_type": "measurement",
+      "play_format": "doubles",
+      "exposure_measurement_method": "device_derived",
+      "provenance_class": "DEVICE_MEASURED",
+      "unit": "beats/min"
+    },
+    {
+      "record_id": "STRESS-RCT-01",
+      "study_id": "Zeng2026",
+      "protocol_version": "publication-reconstruction-v0.3",
+      "session_type": "lesson",
+      "exposure_measurement_method": "administrative_record",
+      "provenance_class": "MIXED"
+    },
+    {
+      "record_id": "STRESS-CV-01",
+      "study_id": "Edriss2025",
+      "protocol_version": "publication-reconstruction-v0.3",
+      "session_type": "measurement",
+      "provenance_class": "ALGORITHM_DERIVED",
+      "source_record_ids": ["VIDEO-RAW-01"],
+      "derivation_method": "pose-estimation-derived kinematic measure",
+      "software_or_model": "MediaPipe-based workflow",
+      "pipeline_version": "publication-reconstruction-v0.3"
+    }
+  ]
+}
