@@ -1,0 +1,37 @@
+variable,level,requirement,type,allowed_values_or_format,definition,module,provenance_expectation,notes
+record_id,record,REQUIRED,string,unique within release,Unique record identifier,core,ADMINISTRATIVE,Must not contain direct identifiers
+study_id,study,REQUIRED,string,stable identifier,Stable study or protocol identifier,core,ADMINISTRATIVE,
+protocol_version,study,REQUIRED,string,semantic or documented version,Protocol version governing the record,core,ADMINISTRATIVE,
+site_id,site,RECOMMENDED,string,pseudonymous or public identifier,Data-collection site identifier,core,ADMINISTRATIVE,Generalize if disclosure risk requires
+collection_date,record,RECOMMENDED,date,YYYY-MM-DD or documented generalized date,Date of observation or collection,core,ADMINISTRATIVE,
+country_iso3,site,RECOMMENDED,string,ISO 3166-1 alpha-3,Country of data collection,core,ADMINISTRATIVE,Do not infer from author affiliation
+participant_id,participant,CONDITIONAL,string,pseudonymous stable identifier,Participant identifier,core,ADMINISTRATIVE,Needed only for participant-linked records
+age_value,participant,OPTIONAL-CONTROLLED,number,>=0,Exact age where scientifically justified and appropriately governed,core,SELF_REPORT|ADMINISTRATIVE_RECORD,May be excluded from public release
+age_band,participant,RECOMMENDED,categorical,<18|18-24|25-34|35-44|45-54|55-64|65-74|75-84|85+|NR,Age band at collection,core,SELF_REPORT|ADMINISTRATIVE_RECORD,May be derived from controlled age_value
+pickleball_experience_months,participant,RECOMMENDED,integer,>=0,Months since regular pickleball participation began,core,SELF_REPORT,Define regular participation in protocol
+skill_rating_system,participant,CONDITIONAL,string,named system,Structured rating system associated with skill_rating_value,core,ADMINISTRATIVE_RECORD|SELF_REPORT,Required when rating value is present
+skill_rating_value,participant,CONDITIONAL,string,system-specific,Rating value under named system,core,ADMINISTRATIVE_RECORD|SELF_REPORT,Do not compare across systems without crosswalk
+session_id,session,CONDITIONAL,string,stable identifier,Session identifier,core,ADMINISTRATIVE,
+session_type,session,RECOMMENDED,categorical,practice|recreational_play|competition|measurement|lesson|other,Primary session purpose,core,DIRECT_OBSERVATION|ADMINISTRATIVE_RECORD|SELF_REPORT,
+play_format,session,RECOMMENDED,categorical,singles|doubles|mixed|not_applicable|unknown,Primary play format,core,DIRECT_OBSERVATION|ADMINISTRATIVE_RECORD|SELF_REPORT,
+indoor_outdoor,session,RECOMMENDED,categorical,indoor|outdoor|mixed|unknown,Primary setting,core,DIRECT_OBSERVATION|ADMINISTRATIVE_RECORD|SELF_REPORT,
+session_duration_min,session,RECOMMENDED,number,>=0,Elapsed session duration in minutes,core,DIRECT_OBSERVATION|DEVICE_MEASURED|ADMINISTRATIVE_RECORD|SELF_REPORT,Pair with exposure_measurement_method
+active_play_duration_min,session,OPTIONAL,number,>=0,Measured or estimated active participation time in minutes,core,DIRECT_OBSERVATION|DEVICE_MEASURED|ALGORITHM_DERIVED|SELF_REPORT,Document method
+games_played,session,OPTIONAL,integer,>=0,Completed games within session,core,DIRECT_OBSERVATION|ADMINISTRATIVE_RECORD|SELF_REPORT,
+exposure_measurement_method,session,RECOMMENDED,categorical,direct_timing|device_derived|administrative_record|self_report|scheduled_duration|estimated|mixed|unknown,Method used to quantify exposure,core,ADMINISTRATIVE,Distinguishes measured from estimated dose
+provenance_class,record,RECOMMENDED,categorical,DIRECT_OBSERVATION|SELF_REPORT|DEVICE_MEASURED|VIDEO_CODED|ADMINISTRATIVE_RECORD|ALGORITHM_DERIVED|ANALYTIC_DERIVED|MIXED,Primary provenance class for analytically important value,core,ADMINISTRATIVE,Unified across all v0.3 artifacts
+unit,record,CONDITIONAL,string,UCUM or documented unit where feasible,Unit for quantitative value,core,ADMINISTRATIVE,Required for quantitative derived variables where applicable
+source_record_ids,derived,CONDITIONAL,string,pipe-separated record IDs or structured array,Source records contributing to derived value,core,ADMINISTRATIVE,Expected for algorithmic or analytic derivation
+derivation_method,derived,CONDITIONAL,string,formula algorithm or documented method,Method used to derive value,core,ADMINISTRATIVE,Expected for derived variables
+software_or_model,derived,OPTIONAL,string,name,Software or model used for derivation,core,ADMINISTRATIVE,
+software_or_model_version,derived,OPTIONAL,string,version,Software or model version,core,ADMINISTRATIVE,
+pipeline_version,derived,OPTIONAL,string,version,Version of transformation pipeline,core,ADMINISTRATIVE,
+dominant_hand,participant,OPTIONAL,categorical,right|left|ambidextrous|other|unknown,Playing hand dominance,sport_specific,SELF_REPORT,
+prior_racket_paddle_sport,participant,OPTIONAL,categorical,yes|no|unknown,Prior racket or paddle sport experience,sport_specific,SELF_REPORT,
+sex_variable,participant,OPTIONAL,string,study-defined with instrument metadata,Sex-related variable when scientifically relevant,participant_equity,SELF_REPORT|ADMINISTRATIVE_RECORD,Not universal core; preserve definition
+ gender_variable,participant,OPTIONAL,string,study-defined with instrument metadata,Gender-related variable when scientifically relevant,participant_equity,SELF_REPORT,Not universal core; preserve definition
+body_region,event,OPTIONAL,string,IOC/STROBE-SIIS crosswalk recommended,Injury or symptom body region,injury_health,DIRECT_OBSERVATION|SELF_REPORT|ADMINISTRATIVE_RECORD,Reuse established sport-injury definitions when possible
+injury_onset,event,OPTIONAL,categorical,acute|gradual|mixed|unknown,Injury onset classification,injury_health,DIRECT_OBSERVATION|SELF_REPORT|ADMINISTRATIVE_RECORD,Module definition should align with accepted surveillance guidance
+match_id,match,OPTIONAL,string,stable identifier,Match identifier,performance,ADMINISTRATIVE,
+rally_id,rally,OPTIONAL,string,stable identifier,Rally identifier,performance,ADMINISTRATIVE,
+shot_type,event,OPTIONAL,string,versioned ontology term,Shot classification,performance,DIRECT_OBSERVATION|VIDEO_CODED|ALGORITHM_DERIVED,Label ontology and version required for benchmark use
