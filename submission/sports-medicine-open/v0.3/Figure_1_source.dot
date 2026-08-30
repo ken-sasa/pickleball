@@ -1,0 +1,46 @@
+digraph OPRC_v03 {
+  graph [rankdir=LR, bgcolor="white", fontname="Helvetica", label="Context-and-provenance layer and validation path", labelloc=t, fontsize=18, nodesep=0.32, ranksep=0.55, compound=true];
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, color="#17365d", penwidth=1.0, margin="0.12,0.08"];
+  edge [color="#17365d", penwidth=1.05, arrowsize=0.68];
+
+  subgraph cluster_A {
+    label="A. Preserve study diversity; standardize connective context";
+    color="#9ca3af";
+    style="rounded";
+
+    diversity [label="Study-specific diversity\nTheories · outcomes · instruments · analyses", fillcolor="#f2f2f2", color="#6b7280"];
+    context [label="CONTEXT\nStudy · participant · session\nexposure · units", fillcolor="#ddebf7"];
+    provenance [label="PROVENANCE\nSource class · derivation\nsoftware/model · version", fillcolor="#ddefea"];
+    modules [label="DOMAIN MODULES\nInjury · performance · social\nparticipant/equity · analytics", fillcolor="#fff2cc"];
+    outcome [label="Outcome harmonization\nwhen scientifically justified", fillcolor="#fce4d6"];
+    interoperability [label="MINIMUM SUFFICIENT INTEROPERABILITY\nshared connective context without forcing common outcomes", fillcolor="#17365d", fontcolor="white", color="#17365d"];
+
+    diversity -> context;
+    diversity -> provenance;
+    context -> interoperability;
+    provenance -> interoperability;
+    modules -> interoperability;
+    outcome -> interoperability [style=dashed];
+  }
+
+  subgraph cluster_B {
+    label="B. Candidate-to-stable validation path";
+    color="#9ca3af";
+    style="rounded";
+
+    candidate [label="Pre-consensus candidate", fillcolor="#ddebf7"];
+    review [label="Structured external review\nnecessity · overlap · ambiguity", fillcolor="#e2f0d9"];
+    maptest [label="Retrospective mapping\ncoverage · burden · unmapped fields", fillcolor="#fff2cc"];
+    pilot [label="Independent pilot use\nmissingness · interpretation · burden", fillcolor="#fde9d9"];
+    govern [label="Public governance\ninterests · rationale · audit trail", fillcolor="#eadcf8"];
+    stable [label="Stable archived release\nonly if evidence supports it", fillcolor="#d9ead3", color="#548235"];
+    revise [label="Revise · modularize · replace\nwith external standard · retire", fillcolor="#f4cccc", color="#a61c00"];
+
+    candidate -> review -> maptest -> pilot -> govern;
+    govern -> stable;
+    govern -> revise;
+    revise -> candidate [style=dashed, constraint=false];
+  }
+
+  interoperability -> candidate [ltail=cluster_A, lhead=cluster_B, style=dashed, label="test the layer", fontsize=9];
+}
