@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": "Open Pickleball Research Commons v0.2: Supporting Materials for Cumulative Pickleball Science",
+    "upload_type": "dataset",
+    "description": "Versioned supporting package for the Current Opinion \"Standardize Provenance Before Outcomes: A Research Commons for Cumulative Pickleball Science\". Includes a proof-of-concept evidence-map seed, coding manual, candidate PR-MDS specification and dictionary, and a candidate field measurement protocol. The Evidence Map is AI-assisted, abstract-level, and single-coded; the candidate specifications are not established standards.",
+    "creators": [
+      {
+        "name": "Sasano, Kento",
+        "affiliation": "Okayama University"
+      }
+    ],
+    "publication_date": "2026-08-30",
+    "version": "0.2.0",
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "pickleball",
+      "open science",
+      "research infrastructure",
+      "provenance",
+      "minimum data set",
+      "evidence map",
+      "sports medicine"
+    ],
+    "notes": "Reserve the DOI before publication and insert it into the manuscript data-availability statement and reference list."
+  }
+}

@@ -1,0 +1,46 @@
+digraph OPRC_v02 {
+  graph [rankdir=LR, bgcolor="white", fontname="Helvetica", label="OPRC architecture and validation cycle", labelloc=t, fontsize=18, nodesep=0.35, ranksep=0.55, compound=true];
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, color="#17365d", penwidth=1.0, margin="0.12,0.08"];
+  edge [color="#17365d", penwidth=1.1, arrowsize=0.7];
+
+  subgraph cluster_A {
+    label="A. Shared architecture";
+    color="#9ca3af";
+    style="rounded";
+
+    diversity [label="Study-specific diversity\nTheories · outcomes · instruments · analyses", fillcolor="#f2f2f2", color="#6b7280"];
+    map [label="Living Evidence Map\nStudies · constructs · methods\nverification state", fillcolor="#ddebf7"];
+    mds [label="PR-MDS core\nIdentifiers · provenance\nparticipant context · exposure", fillcolor="#ddefea"];
+    protocols [label="Candidate protocols\nTask scripts · raw observations\ninstruments · units", fillcolor="#fff2cc"];
+    modules [label="Modules and benchmarks\nInjury · social connection\nperformance · PB-Bench", fillcolor="#fce4d6"];
+    interoperability [label="MINIMUM SUFFICIENT INTEROPERABILITY\nShared connective context, not maximum standardization", fillcolor="#17365d", fontcolor="white", color="#17365d"];
+
+    diversity -> map;
+    diversity -> mds;
+    map -> protocols;
+    mds -> modules;
+    map -> mds;
+    protocols -> interoperability;
+    modules -> interoperability;
+  }
+
+  subgraph cluster_B {
+    label="B. Validation and governance";
+    color="#9ca3af";
+    style="rounded";
+
+    candidate [label="Candidate proposal", fillcolor="#ddebf7"];
+    pilot [label="Independent pilot use\nFeasibility · burden · interpretation", fillcolor="#ddefea"];
+    validate [label="Multi-site validation\nReliability · validity · transportability", fillcolor="#fff2cc"];
+    govern [label="Public governance\nReview · interests · change control", fillcolor="#fce4d6"];
+    stable [label="Stable archived release\nPersistent identifier", fillcolor="#e2f0d9", color="#548235"];
+    revise [label="Revise · split · retire\nAudit trail retained", fillcolor="#f4cccc", color="#a61c00"];
+
+    candidate -> pilot -> validate -> govern;
+    govern -> stable;
+    govern -> revise;
+    revise -> candidate [style=dashed, constraint=false];
+  }
+
+  interoperability -> candidate [ltail=cluster_A, lhead=cluster_B, style=dashed, label="test and revise", fontsize=9];
+}

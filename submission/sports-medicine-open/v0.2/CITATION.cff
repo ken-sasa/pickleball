@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the archived Zenodo release; DOI pending."
+title: "Open Pickleball Research Commons v0.2"
+version: 0.2.0
+date-released: 2026-08-30
+authors:
+  - family-names: Sasano
+    given-names: Kento
+    affiliation: Okayama University
+repository-code: "https://github.com/ken-sasa/pickleball"
+license: CC-BY-4.0
+preferred-citation:
+  type: article
+  title: "Standardize Provenance Before Outcomes: A Research Commons for Cumulative Pickleball Science"
+  authors:
+    - family-names: Sasano
+      given-names: Kento
+  year: 2026
