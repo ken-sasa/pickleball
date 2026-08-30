@@ -1,0 +1,28 @@
+30 August 2026
+
+Editor
+Sports Medicine - Open
+
+Re: Current Opinion submission, “Building Cumulative Science in an Emerging Sport: The Open Pickleball Research Commons”
+
+Dear Editor,
+
+I am pleased to submit the Current Opinion, “Building Cumulative Science in an Emerging Sport: The Open Pickleball Research Commons,” for consideration in Sports Medicine - Open.
+
+The manuscript addresses a contemporary methodological problem in sport science: how a rapidly emerging sport can build interoperable research infrastructure before incompatible conventions become entrenched. Pickleball already has a growing literature spanning injury epidemiology, exercise and health, aging, psychosocial outcomes, biomechanics, and technology. I argue that the next bottleneck is not simply producing more studies, but enabling independently designed studies to be compared, replicated, combined, and reused.
+
+The article proposes the Open Pickleball Research Commons (OPRC): a Living Evidence Map, a candidate Pickleball Research Minimum Data Set (PR-MDS), low-cost field measurement protocols, and future benchmark modules. It is intentionally a Current Opinion rather than a systematic review. The 28-record Evidence Map is explicitly labeled as an AI-assisted, single-coded proof-of-concept seed; it is not presented as an exhaustive census or formal evidence synthesis. The scientific contribution is the infrastructure architecture, its minimal-core/modular design, and the validation gates required before any component can claim stable-standard status.
+
+This focus aligns with Sports Medicine - Open because it concerns research quality across sporting performance, injury, exercise and health, biomechanics, and sport-specific technology, while offering a concrete implementation of collaborative and open-science principles in an emerging sport.
+
+This is a single-author manuscript. I have approved the submitted version and take full responsibility for its content. It has not been published and is not under consideration elsewhere. No funding was received, and I declare no competing interests. No human participants were recruited and no identifiable participant data were used; ethics approval and consent are therefore not applicable.
+
+OpenAI ChatGPT assisted with literature organization, schema-consistent seed coding, and manuscript drafting. This use is disclosed in the manuscript; I reviewed the content and references and remain responsible for accuracy and interpretation. Figure 1 is a deterministic text-based vector flow chart rather than a generative-AI image. Five supplementary files provide the proof-of-concept Evidence Map, coding manual, PR-MDS specification and machine-readable dictionary, and field measurement protocol. A frozen Zenodo archive is prepared for DOI reservation before final portal submission.
+
+Thank you for your consideration.
+
+Sincerely,
+
+Kento Sasano
+Okayama University
+Okayama, Japan
