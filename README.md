@@ -1,99 +1,81 @@
-# ピックルボール スコアシート — 公開手順
+# Open Pickleball Research Commons (OPRC)
 
-このフォルダをそのまま Web に置けば、QRコードで配布できるデモ版になります。
-サーバー側の処理はなく、すべて静的ファイルです。
+> **Open, cumulative, and reproducible infrastructure for the science of pickleball.**
 
-## 含まれるファイル
+This repository is evolving from a practical pickleball score-sheet prototype into a research commons for building interoperable, reusable, and testable pickleball science.
 
-| ファイル | 役割 |
-|---|---|
-| `index.html` | アプリ本体（これ1つで動作します） |
-| `manifest.webmanifest` | ホーム画面に追加したときの名前・アイコン設定 |
-| `sw.js` | オフライン用のキャッシュ（体育館で電波が弱くても起動します） |
-| `icon-192.png` / `icon-512.png` | ホーム画面アイコン |
-| `apple-touch-icon.png` | iPhone / iPad 用アイコン |
-| `favicon-32.png` | ブラウザのタブに出る小さいアイコン |
-| `.nojekyll` | GitHub Pages の余計な変換を止めるための空ファイル |
+## Current status
 
----
+**Development branch:** `research-commons-v0.1`  
+**Scientific status:** candidate / pilot infrastructure, not an established international standard.
 
-## GitHub Pages で公開する
+The repository currently contains:
 
-### 1. リポジトリを作る
+- **PR-MDS v0.1** — a candidate Pickleball Research Minimum Data Set;
+- a machine-readable PR-MDS variable dictionary;
+- a **28-record proof-of-concept Global Pickleball Research Evidence Map seed corpus**;
+- an Evidence Map codebook and schema;
+- a low-cost **Pickleball Field Measurement Protocol v0.1**;
+- a **Pickleball as Social Technology Framework v0.1**;
+- a full methods/infrastructure manuscript: **Toward Cumulative Pickleball Science: An Open Research Commons, Minimum Data Standard, and Living Evidence Map**;
+- a BibTeX reference library and submission-readiness audit;
+- the original browser-based pickleball score-sheet application.
 
-1. GitHub にログインし、右上の「＋」→「New repository」。
-2. **Repository name** に例えば `pickleball-scoresheet` と入力。
-3. **Public** を選択（Private だと Pages が有料プラン限定になります）。
-4. 「Create repository」。
+## Why this project exists
 
-### 2. ファイルをアップロードする
+Pickleball research is expanding across injury epidemiology, physical activity, aging, psychology, social connection, biomechanics, participation behavior, and technology. The challenge is not only producing more studies, but making independently conducted studies easier to compare, replicate, synthesize, and reuse.
 
-1. 作ったリポジトリの画面で「uploading an existing file」（または Add file → Upload files）。
-2. **このフォルダの中身**（`index.html` などのファイル）をドラッグ＆ドロップします。
-   フォルダごとではなく、**中のファイルを直接**入れてください。
-3. 下の「Commit changes」を押します。
+OPRC therefore focuses on a **small shared research layer** rather than forcing every study to use one universal protocol.
 
-> `.nojekyll` は先頭がドットのため、環境によってはドラッグ＆ドロップで表示されないことがあります。
-> 見当たらない場合は「Add file → Create new file」でファイル名に `.nojekyll` と入力し、中身は空のまま Commit しても構いません。
+## Core principle
 
-### 3. Pages を有効にする
+> **Minimum common core, extensible modules.**
 
-1. リポジトリの **Settings** → 左メニューの **Pages**。
-2. **Source** で「Deploy from a branch」を選択。
-3. **Branch** を `main`、フォルダを `/ (root)` にして **Save**。
-4. 1〜2分待つと、同じ画面の上部に公開URLが表示されます。
+Studies should remain free to use their own theories, outcomes, instruments, and methods. Shared provenance, participant, and session/exposure fields can nevertheless reduce avoidable incompatibility.
 
-公開URLはこの形になります。
+## Repository map
 
-```
-https://<GitHubのユーザー名>.github.io/<リポジトリ名>/
-```
+- `standards/` — PR-MDS and machine-readable dictionaries
+- `evidence/` — Living Evidence Map schema, codebook, seed corpus, and discovery notes
+- `protocols/` — candidate field measurement protocols
+- `social-technology/` — social-interaction and relationship-formation research framework
+- `papers/` — manuscript, references, and submission-readiness materials
+- root web files — existing score-sheet / GitHub Pages application
 
-例：ユーザー名が `kento-sasano`、リポジトリ名が `pickleball-scoresheet` なら
-`https://kento-sasano.github.io/pickleball-scoresheet/`
+## Evidence Map status
 
-### 4. QRコードを作る
+The current 28-record map is a **discovery seed**, not an exhaustive systematic review. It is explicitly labeled as AI-assisted and single-coded. A stable evidence resource requires bibliographic verification, reproducible multi-database searching, independent coding, agreement assessment, and archived releases.
 
-`QRコード生成.html` をブラウザで開き、上記のURLを貼り付けてください。
-PNG（印刷用）と SVG（拡大しても劣化しない形式）で保存できます。
+## PR-MDS status
 
----
+PR-MDS v0.1 is a candidate specification. It should be evaluated prospectively for burden, ambiguity, missingness, reliability, and scientific utility before promotion to a stable release.
 
-## 更新のしかた
+## Manuscript
 
-`index.html` を新しいものに差し替えて Commit すれば、そのまま反映されます。
-**ただし** `sw.js` がキャッシュを持っているため、既に開いたことのある端末では
-古い画面が出ることがあります。アプリを更新したときは `sw.js` の1行目付近にある
+The current full English manuscript is available at:
 
-```js
-const CACHE = 'pb-scoresheet-v1';
-```
+`papers/cumulative-pickleball-science-manuscript.md`
 
-の `v1` を `v2`、`v3` … と変えてから Commit してください。次に開いたときに新しい版に入れ替わります。
+Its companion reference library is:
 
----
+`papers/references.bib`
 
-## 利用者への案内文（そのままコピーして使えます）
+The current scientific/submission audit is:
 
-> **ピックルボールのスコアシート（無料・登録不要）**
-> QRコードを読み取るとブラウザで開きます。アプリのインストールは不要です。
-> 記録はお使いの端末の中だけに保存され、外部には送信されません。
-> よく使う方は、ブラウザのメニューから「ホーム画面に追加」しておくと、
-> 電波の届かない体育館でもすぐ起動できます。
+`papers/SUBMISSION_READINESS.md`
 
----
+## Long-term direction
 
-## よくある質問
+The longer-term architecture includes:
 
-**Q. データはどこに保存されますか？**
-利用者の端末のブラウザ内（localStorage）だけです。サーバーには何も送られません。
-端末を変えると記録は引き継がれないので、必要な場合はアプリ内のCSV出力を使ってください。
+1. a Living Evidence Map;
+2. PR-MDS and optional domain modules;
+3. validated low-cost court-based measurement protocols;
+4. PB-Bench for comparable video/AI tasks;
+5. a multi-site replication network;
+6. a Pickleball Observatory;
+7. an annual, data-backed State of Pickleball Science report.
 
-**Q. プライベートブラウズだと記録が消えます**
-その場合はアプリが起動時に警告を表示します。CSV出力で保存してください。
+## Governing rule
 
-**Q. 独自ドメインを使いたい**
-Settings → Pages の「Custom domain」に設定できます。設定後はQRコードを作り直してください。
-
-**Q. iPhone でホーム画面に追加したい**
-Safari で開き、共有ボタン → 「ホーム画面に追加」。全画面表示で起動します。
+**Do not increase complexity unless an added variable, protocol, or module creates clear scientific value or interoperability.**
