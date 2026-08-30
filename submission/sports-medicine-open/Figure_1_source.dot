@@ -1,0 +1,25 @@
+digraph OPRC {
+  graph [rankdir=TB, splines=ortho];
+  node [shape=box, style="rounded"];
+
+  evidence [label="Living Evidence Map\nStudies • designs • domains\noutcomes • provenance"];
+  gaps [label="Research questions and gaps\nWhat is missing?\nWhat is incompatible?"];
+  critique [label="External critique and new studies\nIndependent use"];
+
+  prmds [label="PR-MDS Common Data Layer\nMinimal core + extensible modules"];
+  field [label="Field Measurement and Protocols\nLow-cost • raw trials • validation first"];
+  modules [label="Research Modules and PB-Bench\nHealth • social • performance • AI"];
+
+  multisite [label="Multi-site studies and replications\nFeasibility • reliability • validity • generalizability"];
+  governance [label="Validation and governance\nIndependent coding • review • versioning • change control"];
+
+  evidence -> gaps -> critique;
+  gaps -> prmds;
+  gaps -> field;
+  gaps -> modules;
+  prmds -> multisite;
+  field -> multisite;
+  modules -> governance;
+  multisite -> governance;
+  governance -> critique [label="versioned feedback"];
+}
