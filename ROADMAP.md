@@ -10,10 +10,9 @@ Goal: establish a small, inspectable research core that can be reviewed before a
 - [x] Define Evidence Map schema and coding rules
 - [x] Draft low-cost field measurement protocol
 - [x] Draft Pickleball as Social Technology framework
-- [x] Populate the first 28-record evidence-map seed corpus
-- [x] Document discovery queries and seed-corpus limitations
-- [ ] Bibliographically verify all seed records and resolve every DOI
-- [ ] Expand the Evidence Map through a reproducible multi-database search
+- [x] Populate the first evidence-map seed corpus
+- [x] Draft full methods/infrastructure manuscript
+- [x] Add manuscript reference library and submission-readiness audit
 - [ ] Conduct external methodological review
 - [ ] Test PR-MDS on at least one real field dataset
 - [ ] Test inter-rater reliability of Evidence Map coding
@@ -29,15 +28,18 @@ Goal: replace plausible definitions with tested definitions.
 - Add explicit derivation rules and validation checks.
 
 ### Evidence Map
-- Verify bibliographic metadata against DOI/publisher/database records.
-- Verify data-collection country and principal sample size from full text where possible.
-- Identify duplicate reports and shared underlying samples.
-- Develop and freeze a reproducible search strategy.
+- Develop and freeze a reproducible multi-database search strategy.
 - Record database, query, date, screening decision, and exclusion reason.
-- Double-code a non-trivial validation subset.
-- Quantify agreement for inclusion, study-design, and domain coding.
+- Resolve and bibliographically verify seed records.
+- Double-code a validation subset and quantify agreement.
 - Publish study-level extraction data where licensing permits.
-- Audit preregistration, open data, open code, funding, and conflict-of-interest fields from the underlying publications.
+
+### Manuscript
+- Complete author-specific title-page metadata and declarations.
+- Perform full bibliographic audit.
+- Adapt generative-AI disclosure to target-journal policy.
+- Create a publication-quality conceptual figure.
+- Archive a stable OPRC release with DOI before or alongside preprint release.
 
 ### Field protocol
 - Estimate test-retest reliability where appropriate.
@@ -48,7 +50,6 @@ Goal: replace plausible definitions with tested definitions.
 - Validate operational definitions for interaction opportunity, tie formation, repeated contact, belonging, and cross-group contact.
 - Distinguish association from causal effects.
 - Pre-register at least one prospective study.
-- Prefer a simple first manipulation such as fixed versus structured rotating partners while holding total play time broadly constant.
 
 ## Network phase: v0.3
 
@@ -71,7 +72,7 @@ A v1.0 release should require, at minimum:
 5. clear licensing and citation rules;
 6. archival release with DOI;
 7. machine-readable schemas plus human-readable definitions;
-8. reproducible and independently checked evidence-map procedures.
+8. reproducible evidence-map procedures.
 
 ## Longer-term research infrastructure
 
@@ -86,16 +87,6 @@ A lightweight protocol for institutions to reproduce selected studies using the 
 
 ### Annual State of Pickleball Science
 A versioned, data-backed annual synthesis generated from the Evidence Map and Observatory rather than a narrative-only report.
-
-## Candidate publication sequence
-
-1. **Mapping the Emerging Science of Pickleball: A Living Evidence Map and Open Research Infrastructure**
-2. **A Minimum Data Specification for Reproducible Pickleball Research**
-3. **A Low-Cost Field Measurement Battery for Pickleball: Feasibility and Reliability**
-4. **Pickleball as Social Technology: Experimental Evidence from Partner-Rotation Design**
-5. **An Open Benchmark for Pickleball Match and Video Analytics**
-
-The first paper should not move from concept to submission until the Evidence Map has passed systematic-search and double-coding gates.
 
 ## Governing rule
 
