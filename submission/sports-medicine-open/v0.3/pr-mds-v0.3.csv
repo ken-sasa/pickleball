@@ -29,7 +29,7 @@ pipeline_version,derived,OPTIONAL,string,version,Version of transformation pipel
 dominant_hand,participant,OPTIONAL,categorical,right|left|ambidextrous|other|unknown,Playing hand dominance,sport_specific,SELF_REPORT,
 prior_racket_paddle_sport,participant,OPTIONAL,categorical,yes|no|unknown,Prior racket or paddle sport experience,sport_specific,SELF_REPORT,
 sex_variable,participant,OPTIONAL,string,study-defined with instrument metadata,Sex-related variable when scientifically relevant,participant_equity,SELF_REPORT|ADMINISTRATIVE_RECORD,Not universal core; preserve definition
- gender_variable,participant,OPTIONAL,string,study-defined with instrument metadata,Gender-related variable when scientifically relevant,participant_equity,SELF_REPORT,Not universal core; preserve definition
+gender_variable,participant,OPTIONAL,string,study-defined with instrument metadata,Gender-related variable when scientifically relevant,participant_equity,SELF_REPORT,Not universal core; preserve definition
 body_region,event,OPTIONAL,string,IOC/STROBE-SIIS crosswalk recommended,Injury or symptom body region,injury_health,DIRECT_OBSERVATION|SELF_REPORT|ADMINISTRATIVE_RECORD,Reuse established sport-injury definitions when possible
 injury_onset,event,OPTIONAL,categorical,acute|gradual|mixed|unknown,Injury onset classification,injury_health,DIRECT_OBSERVATION|SELF_REPORT|ADMINISTRATIVE_RECORD,Module definition should align with accepted surveillance guidance
 match_id,match,OPTIONAL,string,stable identifier,Match identifier,performance,ADMINISTRATIVE,
